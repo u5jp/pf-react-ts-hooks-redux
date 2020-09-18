@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/pf-react-ts-hooks-redux/static/css/main.2a83f001.chunk.css",
+    "main.js": "/pf-react-ts-hooks-redux/static/js/main.b4e44e25.chunk.js",
+    "main.js.map": "/pf-react-ts-hooks-redux/static/js/main.b4e44e25.chunk.js.map",
+    "runtime-main.js": "/pf-react-ts-hooks-redux/static/js/runtime-main.ef713cf9.js",
+    "runtime-main.js.map": "/pf-react-ts-hooks-redux/static/js/runtime-main.ef713cf9.js.map",
+    "static/js/2.8ea7150e.chunk.js": "/pf-react-ts-hooks-redux/static/js/2.8ea7150e.chunk.js",
+    "static/js/2.8ea7150e.chunk.js.map": "/pf-react-ts-hooks-redux/static/js/2.8ea7150e.chunk.js.map",
+    "index.html": "/pf-react-ts-hooks-redux/index.html",
+    "precache-manifest.f02b95d81837dcf52134e7395a2f2a25.js": "/pf-react-ts-hooks-redux/precache-manifest.f02b95d81837dcf52134e7395a2f2a25.js",
+    "service-worker.js": "/pf-react-ts-hooks-redux/service-worker.js",
+    "static/css/main.2a83f001.chunk.css.map": "/pf-react-ts-hooks-redux/static/css/main.2a83f001.chunk.css.map",
+    "static/js/2.8ea7150e.chunk.js.LICENSE.txt": "/pf-react-ts-hooks-redux/static/js/2.8ea7150e.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ef713cf9.js",
+    "static/js/2.8ea7150e.chunk.js",
+    "static/css/main.2a83f001.chunk.css",
+    "static/js/main.b4e44e25.chunk.js"
+  ]
+}
