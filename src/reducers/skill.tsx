@@ -12,7 +12,14 @@ interface SKILL_STATE {
   interest: number;
 }
 
-const skill = (state: SKILL_STATE[] = [i], action) => {
+interface ACTION {
+  type: string;
+}
+
+const skill: React.Reducer<SKILL_STATE[], ACTION> = (
+  state: SKILL_STATE[] = [i],
+  action
+) => {
   console.log(state);
   switch (action.type) {
     case "SORT_INTEREST":

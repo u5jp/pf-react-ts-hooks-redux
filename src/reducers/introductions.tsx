@@ -10,7 +10,14 @@ interface INTRODUCTION_STATE {
   body: string;
 }
 
-const introductions = (state: INTRODUCTION_STATE[] = [i], action) => {
+interface ACTION {
+  type: string;
+}
+
+const introductions: React.Reducer<INTRODUCTION_STATE[], ACTION> = (
+  state: INTRODUCTION_STATE[] = [i],
+  action
+) => {
   switch (action.type) {
     default:
       return state;
