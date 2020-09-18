@@ -1,0 +1,70 @@
+import React from "react";
+
+import { useInView } from "react-intersection-observer";
+import { Link } from "react-router-dom";
+
+import { AnimatePresence, motion } from "framer-motion";
+
+const Profile = () => {
+  const [ref, inView] = useInView({
+    /* Optional options */
+    threshold: 0,
+    // rootMargin: '-50px 0px',
+  });
+
+  const [ref2, inView2] = useInView({
+    /* Optional options */
+    threshold: 0,
+    // rootMargin: '-50px 0px',
+  });
+
+  return (
+    <motion.div
+      animate={{
+        rotateY: 0,
+        // x: 0,
+        opacity: 1,
+      }}
+      initial={{
+        rotateY: 90,
+        // x: 500,
+        opacity: 0,
+      }}
+      exit={{
+        rotateY: -90,
+        // x: -500,
+        opacity: 0,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+    >
+      <div>
+        <h2 ref={ref}>Profile{`${inView}`}</h2>
+        <p>
+          1994年生まれ、大阪育ち。
+          <br />
+          立命館大学情報理工学部卒業後、凸版印刷株式会社へ入社。生産管理として、約２年従事。カタログやパンフレットなどの製造工程の管理を担当。
+          <br />
+          その後アウトソーシングデザイナーへ転職。Webエンジニア/Webデザイナーとして約1年半従事。ランディングページの制作などを担当。
+        </p>
+        <h3>TimeLine</h3>
+        <ul>
+          <li>
+            <span>2013/04</span> <span>立命館大学情報理工学部入学</span>
+          </li>
+          <li>
+            <span>2017/03</span> <span>立命館大学情報理工学部卒業</span>
+          </li>
+          <li>2017/04 凸版印刷入社</li>
+          <li>2019/02 凸版印刷退社</li>
+        </ul>
+        <h4 ref={ref2}>Hobby{`${inView2}`}</h4>
+        <p>ダーツ・読書・ランニング</p>
+        <Link to={"/"}>戻る</Link>
+      </div>
+    </motion.div>
+  );
+};
+
+export default Profile;
