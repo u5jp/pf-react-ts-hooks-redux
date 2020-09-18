@@ -14,10 +14,7 @@ const i: INTRODUCTION_STATE = {
   body: "",
 };
 
-const introductions: React.Reducer<INTRODUCTION_STATE[], ACTION> = (
-  state: INTRODUCTION_STATE[] = [i],
-  action
-) => {
+const introductions = (state: INTRODUCTION_STATE[] = [i], action: ACTION) => {
   switch (action.type) {
     default:
       return state;

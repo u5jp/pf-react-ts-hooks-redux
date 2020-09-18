@@ -16,10 +16,7 @@ const i: SKILL_STATE = {
   interest: 0,
 };
 
-const skill: React.Reducer<SKILL_STATE[], ACTION> = (
-  state: SKILL_STATE[] = [i],
-  action
-) => {
+const skill = (state: SKILL_STATE[] = [i], action: ACTION) => {
   console.log(state);
   switch (action.type) {
     case "SORT_INTEREST":
