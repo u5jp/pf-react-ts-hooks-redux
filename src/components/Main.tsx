@@ -6,32 +6,28 @@ import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 import { AnimatePresence, motion } from "framer-motion";
 
-const MainContents = styled.div`
+const MainPage = styled.div`
   max-width: 1000px;
   margin: 0 auto;
   transition: 2s;
   opacity: 0;
   opacity: ${(props) => props.inView && `1`};
 `;
+
 const AboutMe = styled.div`
   margin-top: 50px;
-`;
-
-const AboutMeName = styled.div`
   h1 {
     margin-top: 20px;
     font-size: 30px;
     font-weight: bold;
+    font-family: "Open Sans", sans-serif;
   }
   h2 {
     margin-top: 20px;
     font-size: 20px;
   }
-  p {
-  }
 `;
 
-const AboutMeDsc = styled.div``;
 const IntroductionUl = styled.ul`
   margin-top: 50px;
   display: flex;
@@ -67,25 +63,25 @@ const Main = () => {
         duration: 0.5,
       }}
     >
-      <MainContents inView={inView} ref={ref}>
+      <MainPage inView={inView} ref={ref}>
         <AboutMe>
-          <AboutMeName>
-            <h1>about me</h1>
+          <div>
+            <h1>(制作中)about me</h1>
             <h2>市橋 優悟</h2>
             <p>Yugo Ichihashi</p>
-          </AboutMeName>
-          <AboutMeDsc>
+          </div>
+          <div>
             <p>
               グローバルスポーツブランドのWeb制作・運用業務に取り組んでおりました。ディレクターや顧客と連携し、HTML/CSS/JavaScriptとそのライブラリを用いたリッチなランディングページの制作を行うのが主な業務です。フロントエンド・Webデザインの技術への関心が強かったことや生産管理の経験によるコミュニケーションや管理の姿勢が評価され、技術リーダーとしてチームを牽引しておりました。React.jsやVue.jsなどのモダン技術を用いた開発に興味を持ち独学を始めたことをきっかけに転職活動を行なっております。
             </p>
-          </AboutMeDsc>
+          </div>
         </AboutMe>
         <IntroductionUl>
           {value.stateProvided.introductions.map((introduction, index) => (
             <IntroductionCard key={index} introduction={introduction} />
           ))}
         </IntroductionUl>
-      </MainContents>
+      </MainPage>
     </motion.div>
   );
 };

@@ -2,21 +2,31 @@ import React from "react";
 
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
-
+import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Profile = () => {
-  const [ref, inView] = useInView({
-    /* Optional options */
-    threshold: 0,
-    // rootMargin: '-50px 0px',
-  });
+const ProfilePage = styled.div`
+  margin-top: 50px;
+  h1 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+  }
+`;
 
-  const [ref2, inView2] = useInView({
-    /* Optional options */
-    threshold: 0,
-    // rootMargin: '-50px 0px',
-  });
+const Profile = () => {
+  // const [ref, inView] = useInView({
+  //   /* Optional options */
+  //   threshold: 0,
+  //   // rootMargin: '-50px 0px',
+  // });
+
+  // const [ref2, inView2] = useInView({
+  //   /* Optional options */
+  //   threshold: 0,
+  //   // rootMargin: '-50px 0px',
+  // });
 
   return (
     <motion.div
@@ -39,8 +49,8 @@ const Profile = () => {
         duration: 0.5,
       }}
     >
-      <div>
-        <h2 ref={ref}>Profile{`${inView}`}</h2>
+      <ProfilePage>
+        <h1>Profile</h1>
         <p>
           1994年生まれ、大阪育ち。
           <br />
@@ -59,10 +69,10 @@ const Profile = () => {
           <li>2017/04 凸版印刷入社</li>
           <li>2019/02 凸版印刷退社</li>
         </ul>
-        <h4 ref={ref2}>Hobby{`${inView2}`}</h4>
+        <h4>Hobby</h4>
         <p>ダーツ・読書・ランニング</p>
         <Link to={"/"}>戻る</Link>
-      </div>
+      </ProfilePage>
     </motion.div>
   );
 };

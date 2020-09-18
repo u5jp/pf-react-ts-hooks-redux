@@ -7,6 +7,15 @@ import styled from "styled-components";
 
 import { AnimatePresence, motion } from "framer-motion";
 
+const SkillPage = styled.div`
+  margin-top: 50px;
+  h1 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+  }
+`;
 const SkillUl = styled.ul`
   max-width: 960px;
   display: flex;
@@ -39,8 +48,8 @@ const Skill = () => {
         duration: 0.5,
       }}
     >
-      <div>
-        <h2>Skill</h2>
+      <SkillPage>
+        <h1>Skill</h1>
         <button onClick={() => value.dispatchProvided({ type: "SORT_NAME" })}>
           ソートテスト
         </button>
@@ -60,7 +69,7 @@ const Skill = () => {
           ))}
         </SkillUl>
         <Link to={"/"}>戻る</Link>
-      </div>
+      </SkillPage>
     </motion.div>
   );
 };

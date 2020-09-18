@@ -4,13 +4,7 @@ import "./App.css";
 import AppContext from "./contexts/AppContext";
 import rootReducer from "./reducers/index";
 
-import {
-  HashRouter,
-  BrowserRouter,
-  useLocation,
-  Route,
-  Switch,
-} from "react-router-dom";
+import { useLocation, Route, Switch } from "react-router-dom";
 
 import Main from "./components/Main";
 import Skill from "./components/Skill";

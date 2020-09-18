@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import AppContext from "../contexts/AppContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -23,6 +23,7 @@ const Nav = styled.nav`
     display: flex;
     padding-right: 100px;
     > li {
+      width: 100px;
       padding: 15px;
     }
   }
@@ -31,6 +32,10 @@ const Nav = styled.nav`
 const Header = () => {
   const value: any = useContext(AppContext);
 
+  const location = useLocation();
+  const [_, rootPath] = location.pathname.split("/");
+  console.log(location);
+
   return (
     <Nav>
       <ul>
@@ -38,7 +43,7 @@ const Header = () => {
           <Link to={""}>top</Link>
         </li>
         {value.stateProvided.introductions.map((introduction, index) => (
-          <li>
+          <li key={index}>
             <Link to={`/${introduction.title}`}>{introduction.title}</Link>
           </li>
         ))}
