@@ -1,4 +1,19 @@
-const skill = (state, action) => {
+const i: SKILL_STATE = {
+  name: "",
+  period: "",
+  proficiency: 0,
+  interest: 0,
+};
+
+interface SKILL_STATE {
+  name: string;
+  period: string;
+  proficiency: number;
+  interest: number;
+}
+
+const skill = (state: SKILL_STATE[] = [i], action) => {
+  console.log(state);
   switch (action.type) {
     case "SORT_INTEREST":
       state.sort(function (a: any, b: any) {
