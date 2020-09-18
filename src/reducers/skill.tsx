@@ -1,10 +1,3 @@
-const i: SKILL_STATE = {
-  name: "",
-  period: "",
-  proficiency: 0,
-  interest: 0,
-};
-
 interface SKILL_STATE {
   name: string;
   period: string;
@@ -15,6 +8,13 @@ interface SKILL_STATE {
 interface ACTION {
   type: string;
 }
+
+const i: SKILL_STATE = {
+  name: "",
+  period: "",
+  proficiency: 0,
+  interest: 0,
+};
 
 const skill: React.Reducer<SKILL_STATE[], ACTION> = (
   state: SKILL_STATE[] = [i],

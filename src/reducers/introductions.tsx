@@ -1,9 +1,3 @@
-const i: INTRODUCTION_STATE = {
-  id: "",
-  title: "",
-  body: "",
-};
-
 interface INTRODUCTION_STATE {
   id: string;
   title: string;
@@ -13,6 +7,12 @@ interface INTRODUCTION_STATE {
 interface ACTION {
   type: string;
 }
+
+const i: INTRODUCTION_STATE = {
+  id: "",
+  title: "",
+  body: "",
+};
 
 const introductions: React.Reducer<INTRODUCTION_STATE[], ACTION> = (
   state: INTRODUCTION_STATE[] = [i],
