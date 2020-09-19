@@ -20,12 +20,12 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const GlobalStyle = createGlobalStyle`
   ${reset}
+  *{box-sizing: border-box;}
   a{
     text-decoration: none;
     color:#000;
   }
-  *{box-sizing: border-box;}
-  /* other styles */
+  li{list-style: none;}
 `;
 
 const Section = styled.section`

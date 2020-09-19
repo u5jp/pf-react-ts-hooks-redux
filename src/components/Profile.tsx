@@ -28,24 +28,10 @@ const Profile = () => {
 
   return (
     <motion.div
-      animate={{
-        rotateY: 0,
-        // x: 0,
-        opacity: 1,
-      }}
-      initial={{
-        rotateY: 90,
-        // x: 500,
-        opacity: 0,
-      }}
-      exit={{
-        rotateY: -90,
-        // x: -500,
-        opacity: 0,
-      }}
-      transition={{
-        duration: 0.5,
-      }}
+      animate={{ rotateY: 0, opacity: 1 }}
+      initial={{ rotateY: 90, opacity: 0 }}
+      exit={{ rotateY: -90, opacity: 0 }}
+      transition={{ duration: 0.5 }}
     >
       <ProfilePage>
         <h1>Profile</h1>
