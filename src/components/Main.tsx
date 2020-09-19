@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import IntroductionCard from "./IntroductionCard";
 import AppContext from "../contexts/AppContext";
 
@@ -33,8 +33,21 @@ const IntroductionUl = styled.ul`
   display: flex;
   justify-content: space-around;
 `;
+
+// const StyledComponent = styled(Main)`
+//   font-size: 100px !important;
+// `;
+
 const Main = () => {
   const value: any = useContext(AppContext);
+  // const [title, setTitle] = useState("(制作中)about me");
+  const title = "(制作中)about me";
+  useEffect(() => {
+    document.title = title;
+    return () => {
+      document.title = "ReactApp";
+    };
+  }, []);
 
   const [ref, inView] = useInView({
     /* Optional options */
@@ -66,7 +79,7 @@ const Main = () => {
       <MainPage inView={inView} ref={ref}>
         <AboutMe>
           <div>
-            <h1>(制作中)about me</h1>
+            <h1>{title}</h1>
             <h2>市橋 優悟</h2>
             <p>Yugo Ichihashi</p>
           </div>

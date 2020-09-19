@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 
+import { useLocation } from "react-router-dom";
 import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
@@ -16,17 +17,14 @@ const ProfilePage = styled.div`
 `;
 
 const Profile = () => {
-  // const [ref, inView] = useInView({
-  //   /* Optional options */
-  //   threshold: 0,
-  //   // rootMargin: '-50px 0px',
-  // });
-
-  // const [ref2, inView2] = useInView({
-  //   /* Optional options */
-  //   threshold: 0,
-  //   // rootMargin: '-50px 0px',
-  // });
+  const location = useLocation();
+  const [_, rootPath] = location.pathname.split("/");
+  useEffect(() => {
+    document.title = rootPath;
+    return () => {
+      document.title = "ReactApp";
+    };
+  });
 
   return (
     <motion.div

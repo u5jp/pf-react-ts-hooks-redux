@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import SkillCard from "./SkillCard";
 import AppContext from "../contexts/AppContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -27,6 +27,14 @@ const SkillUl = styled.ul`
 
 const Skill = () => {
   const value: any = useContext(AppContext);
+  const location = useLocation();
+  const [_, rootPath] = location.pathname.split("/");
+  useEffect(() => {
+    document.title = rootPath;
+    return () => {
+      document.title = "ReactApp";
+    };
+  });
   return (
     <motion.div
       animate={{
