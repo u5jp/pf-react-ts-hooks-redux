@@ -4,7 +4,26 @@ import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
-const Nav = styled.nav`
+const Header = ({ className }) => {
+  const value: any = useContext(AppContext);
+
+  return (
+    <nav className={className}>
+      <ul>
+        <li>
+          <Link to={""}>top</Link>
+        </li>
+        {value.stateProvided.introductions.map((introduction, index) => (
+          <li key={index}>
+            <Link to={`/${introduction.title}`}>{introduction.title}</Link>
+          </li>
+        ))}
+      </ul>
+    </nav>
+  );
+};
+
+const HeaderStyled = styled(Header)`
   background-color: rgba(38, 46, 49, 1);
   width: 100%;
   height: 70px;
@@ -29,23 +48,4 @@ const Nav = styled.nav`
   }
 `;
 
-const Header = () => {
-  const value: any = useContext(AppContext);
-
-  return (
-    <Nav>
-      <ul>
-        <li>
-          <Link to={""}>top</Link>
-        </li>
-        {value.stateProvided.introductions.map((introduction, index) => (
-          <li key={index}>
-            <Link to={`/${introduction.title}`}>{introduction.title}</Link>
-          </li>
-        ))}
-      </ul>
-    </Nav>
-  );
-};
-
-export default Header;
+export default HeaderStyled;
