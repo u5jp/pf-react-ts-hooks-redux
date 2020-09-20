@@ -6,17 +6,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 
-const ProfilePage = styled.div`
-  margin-top: 50px;
-  h1 {
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: "Open Sans", sans-serif;
-  }
-`;
-
-const Profile = () => {
+const Profile = ({ className }) => {
   const location = useLocation();
   const [_, rootPath] = location.pathname.split("/");
   useEffect(() => {
@@ -33,7 +23,7 @@ const Profile = () => {
       exit={{ rotateY: -90, opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <ProfilePage>
+      <div className={className}>
         <h1>Profile</h1>
         <p>
           1994年生まれ、大阪育ち。
@@ -56,9 +46,19 @@ const Profile = () => {
         <h4>Hobby</h4>
         <p>ダーツ・読書・ランニング</p>
         <Link to={"/"}>戻る</Link>
-      </ProfilePage>
+      </div>
     </motion.div>
   );
 };
 
-export default Profile;
+const ProfileStyled = styled(Profile)`
+  margin-top: 50px;
+  h1 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+  }
+`;
+
+export default ProfileStyled;

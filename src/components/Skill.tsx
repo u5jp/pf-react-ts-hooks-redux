@@ -7,25 +7,7 @@ import styled from "styled-components";
 
 import { AnimatePresence, motion } from "framer-motion";
 
-const SkillPage = styled.div`
-  margin-top: 50px;
-  h1 {
-    margin-top: 20px;
-    font-size: 30px;
-    font-weight: bold;
-    font-family: "Open Sans", sans-serif;
-  }
-`;
-const SkillUl = styled.ul`
-  max-width: 960px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  max-width: 960px;
-  margin: 0 auto;
-`;
-
-const Skill = () => {
+const Skill = ({ className }) => {
   const value: any = useContext(AppContext);
   const location = useLocation();
   const [_, rootPath] = location.pathname.split("/");
@@ -42,7 +24,7 @@ const Skill = () => {
       exit={{ rotateY: -90, opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <SkillPage>
+      <div>
         <h1>Skill</h1>
         <button onClick={() => value.dispatchProvided({ type: "SORT_NAME" })}>
           ソートネーム
@@ -57,15 +39,33 @@ const Skill = () => {
         >
           興味度順
         </button>
-        <SkillUl>
+        <div className={`${className}_skillUl`}>
           {value.stateProvided.skill.map((skill, index) => (
             <SkillCard key={index} skill={skill} />
           ))}
-        </SkillUl>
+        </div>
         <Link to={"/"}>戻る</Link>
-      </SkillPage>
+      </div>
     </motion.div>
   );
 };
 
-export default Skill;
+const SkillStyled = styled(Skill)`
+  margin-top: 50px;
+  h1 {
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: "Open Sans", sans-serif;
+  }
+  &_skillUl {
+    max-width: 960px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+`;
+
+export default SkillStyled;

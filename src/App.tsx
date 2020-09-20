@@ -37,7 +37,7 @@ const getQuery = (search) => {
   return Object.fromEntries(searchParams);
 };
 
-function App() {
+const App = () => {
   const [state, dispatch] = useReducer(rootReducer, initialState);
   console.log("appinitiaasta", initialState);
 
@@ -70,6 +70,6 @@ function App() {
       </AppContext.Provider>
     </div>
   );
-}
+};
 
 export default App;

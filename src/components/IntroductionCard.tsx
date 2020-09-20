@@ -25,8 +25,8 @@ const IntroductionCard = ({ introduction }) => {
   return (
     <Card>
       <Link to={`/${introduction.title}`}>
-        {introduction.title == "profile" && <LogoHuman />}
-        {introduction.title == "skill" && <LogoSkill />}
+        {introduction.title === "profile" && <LogoHuman />}
+        {introduction.title === "skill" && <LogoSkill />}
         {/* <Icon src={`${process.env.PUBLIC_URL}/icons/${introduction.title}.svg`} /> */}
         <h2>{introduction.title}</h2>
         <p>{introduction.body}</p>
