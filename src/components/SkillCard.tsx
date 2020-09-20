@@ -38,7 +38,6 @@ const SkillBar = styled.div`
   background: #fff;
   position: relative;
   border-radius: 10px;
-  -webkit-box-shadow: 0 5px 15px 0 rgba(7, 33, 66, 0.15);
   box-shadow: 0 5px 15px 0 rgba(7, 33, 66, 0.15);
   transition: 1s;
   &::after {
@@ -51,7 +50,8 @@ const SkillBar = styled.div`
     width: 10%;
     transition: 2s;
     width: ${(props) => props.inView && props.width * 20 + `%`};
-    background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a);
+    /* background-image: linear-gradient(to right, #072142, #8c2b7a 42%, #ff4d5a); */
+    background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
   }
 `;
 

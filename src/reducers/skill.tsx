@@ -17,7 +17,6 @@ const i: SKILL_STATE = {
 };
 
 const skill = (state: SKILL_STATE[] = [i], action: ACTION) => {
-  console.log(state);
   switch (action.type) {
     case "SORT_INTEREST":
       state.sort(function (a: any, b: any) {

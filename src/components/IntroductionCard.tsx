@@ -21,7 +21,6 @@ const Card = styled.li`
 `;
 
 const IntroductionCard = ({ introduction }) => {
-  console.log(introduction);
   return (
     <Card>
       <Link to={`/${introduction.title}`}>

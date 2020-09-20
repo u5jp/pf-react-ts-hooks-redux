@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import AppContext from "../contexts/AppContext";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -31,10 +31,6 @@ const Nav = styled.nav`
 
 const Header = () => {
   const value: any = useContext(AppContext);
-
-  const location = useLocation();
-  const [_, rootPath] = location.pathname.split("/");
-  console.log(location);
 
   return (
     <Nav>

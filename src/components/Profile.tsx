@@ -45,7 +45,12 @@ const Profile = ({ className }) => {
         </ul>
         <h4>Hobby</h4>
         <p>ダーツ・読書・ランニング</p>
-        <Link to={"/"}>戻る</Link>
+        {/* <Link to={"/"}>
+          <div className={`${className}_backButton`}>
+            <i className="fas fa-arrow-circle-left fa-3x"></i>
+            トップページへ戻る
+          </div>
+        </Link> */}
       </div>
     </motion.div>
   );
@@ -58,6 +63,11 @@ const ProfileStyled = styled(Profile)`
     font-size: 30px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
+  }
+  &_backButton {
+    position: fixed;
+    bottom: 10%;
+    right: 10%;
   }
 `;
 

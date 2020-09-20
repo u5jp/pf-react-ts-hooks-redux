@@ -10,6 +10,7 @@ import Main from "./components/Main";
 import Skill from "./components/Skill";
 import Profile from "./components/Profile";
 import Header from "./components/Header";
+import BackButton from "./components/BackButton";
 
 import initialState from "./initialState";
 
@@ -39,7 +40,6 @@ const getQuery = (search) => {
 
 const App = () => {
   const [state, dispatch] = useReducer(rootReducer, initialState);
-  console.log("appinitiaasta", initialState);
 
   const location = useLocation();
   const [_, rootPath] = location.pathname.split("/");
@@ -61,11 +61,12 @@ const App = () => {
               {/* <Switch> */}
               <Route exact path="/" component={Main} />
               <Route exact path="/skill" component={Skill} />
-              <Route path="/profile" component={Profile} />
+              <Route exact path="/profile" component={Profile} />
               {/* <Route path="/hobby" component = {Hobby}/> */}
             </Switch>
           </AnimatePresence>
         </Section>
+        <BackButton />
         {/* </HashRouter> */}
       </AppContext.Provider>
     </div>
