@@ -6,8 +6,8 @@ const BackGround = () => {
   return (
     <Particles
       id="tsparticles"
-      width="100vw"
-      height="100vh"
+      width="100%"
+      height="100%"
       style={{ position: "fixed", zIndex: "-1", top: "0", left: "0" }}
       options={{
         background: {
