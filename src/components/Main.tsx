@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const Main = ({ className }) => {
   const context: any = useContext(AppContext);
+  console.log(context);
   // const [title, setTitle] = useState("(制作中)about me");
   const title = "ABOUT ME";
   useEffect(() => {
@@ -24,9 +25,17 @@ const Main = ({ className }) => {
 
   return (
     <motion.div
-      animate={{ rotateY: 0, opacity: 1 }}
-      initial={{ rotateY: 90, opacity: 0 }}
-      exit={{ rotateY: -90, opacity: 0 }}
+      animate={
+        context.isIPhone ? { x: 0, opacity: 1 } : { rotateY: 0, opacity: 1 }
+      }
+      initial={
+        context.isIPhone ? { x: 500, opacity: 1 } : { rotateY: 90, opacity: 1 }
+      }
+      exit={
+        context.isIPhone
+          ? { x: -500, opacity: 1 }
+          : { rotateY: -90, opacity: 1 }
+      }
       transition={{ duration: 0.5 }}
     >
       <div className={className}>
@@ -78,7 +87,8 @@ const View = styled.div`
 
 const MainStyled = styled(Main)`
   max-width: 1000px;
-  margin: 50px auto 8%;
+  margin: 50px auto 0;
+  padding-bottom: 8%;
   transition: 2s;
   /* opacity: 0; */
   opacity: ${(props) => props.inView && `1`};

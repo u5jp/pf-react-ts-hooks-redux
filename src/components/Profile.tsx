@@ -5,8 +5,10 @@ import { useInView } from "react-intersection-observer";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
+import AppContext from "../contexts/AppContext";
 
 const Profile = ({ className }) => {
+  const context: any = useContext(AppContext);
   const location = useLocation();
   const [_, rootPath] = location.pathname.split("/");
   useEffect(() => {
@@ -19,9 +21,17 @@ const Profile = ({ className }) => {
 
   return (
     <motion.div
-      animate={{ rotateY: 0, opacity: 1 }}
-      initial={{ rotateY: 90, opacity: 0 }}
-      exit={{ rotateY: -90, opacity: 0 }}
+      animate={
+        context.isIPhone ? { x: 0, opacity: 1 } : { rotateY: 0, opacity: 1 }
+      }
+      initial={
+        context.isIPhone ? { x: 500, opacity: 1 } : { rotateY: 90, opacity: 1 }
+      }
+      exit={
+        context.isIPhone
+          ? { x: -500, opacity: 1 }
+          : { rotateY: -90, opacity: 1 }
+      }
       transition={{ duration: 0.5 }}
     >
       <div className={className}>
@@ -69,7 +79,8 @@ const Profile = ({ className }) => {
 };
 
 const ProfileStyled = styled(Profile)`
-  margin: 50px auto 8%;
+  margin: 50px auto 0;
+  padding-bottom: 8%;
   h1 {
     margin-top: 20px;
     font-size: 30px;

@@ -47,9 +47,17 @@ const Skill = ({ className }) => {
   }, []);
   return (
     <motion.div
-      animate={{ rotateY: 0, opacity: 1 }}
-      initial={{ rotateY: 90, opacity: 0 }}
-      exit={{ rotateY: -90, opacity: 0 }}
+      animate={
+        context.isIPhone ? { x: 0, opacity: 1 } : { rotateY: 0, opacity: 1 }
+      }
+      initial={
+        context.isIPhone ? { x: 500, opacity: 1 } : { rotateY: 90, opacity: 1 }
+      }
+      exit={
+        context.isIPhone
+          ? { x: -500, opacity: 1 }
+          : { rotateY: -90, opacity: 1 }
+      }
       transition={{ duration: 0.5 }}
     >
       <div className={className}>
@@ -81,7 +89,8 @@ const Skill = ({ className }) => {
 
 const SkillStyled = styled(Skill)`
   max-width: 960px;
-  margin: 50px auto 8%;
+  margin: 50px auto 0;
+  padding-bottom: 8%;
   h1 {
     margin-top: 20px;
     font-size: 30px;

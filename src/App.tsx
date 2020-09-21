@@ -1,4 +1,4 @@
-import React, { useReducer, useCallback } from "react";
+import React, { useReducer, useEffect, useState } from "react";
 import "./App.css";
 
 import AppContext from "./contexts/AppContext";
@@ -47,6 +47,12 @@ const App = () => {
   const queryParams = getQuery(location.search);
   const dialog = Object.keys(queryParams).includes("dialog");
 
+  const [isIPhone, setIsIPhone] = useState(false);
+
+  useEffect(() => {
+    if (navigator.userAgent.indexOf("iPhone") > 0) setIsIPhone(true);
+  }, []);
+
   return (
     <div className="App">
       <GlobalStyle />
@@ -56,6 +62,7 @@ const App = () => {
           dispatchProvided: dispatch,
           location: location,
           key: rootPath,
+          isIPhone,
         }}
       >
         {/* <HashRouter> */}
@@ -63,7 +70,7 @@ const App = () => {
         <Header />
         <Section>
           <BackGround />
-          <AnimatePresence exitBeforeEnter>
+          <AnimatePresence exitBeforeEnter initial={false}>
             <Switch location={location} key={rootPath}>
               {/* <Switch> */}
               <Route exact path="/" component={Main} />

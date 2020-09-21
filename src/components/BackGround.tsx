@@ -1,14 +1,20 @@
-import React, { memo } from "react";
+import React, { memo, useContext } from "react";
+import AppContext from "../contexts/AppContext";
 const Particles = require("react-tsparticles");
 
 const BackGround = () => {
-  console.log("memo");
+  const context: any = useContext(AppContext);
   return (
     <Particles
       id="tsparticles"
       width="100%"
-      height="100%"
-      style={{ position: "fixed", zIndex: "-1", top: "0", left: "0" }}
+      height={context.isIPhone ? "1000px" : "100%"}
+      style={{
+        position: "fixed",
+        zIndex: "-1",
+        top: "0",
+        left: "0",
+      }}
       options={{
         background: {
           color: {
