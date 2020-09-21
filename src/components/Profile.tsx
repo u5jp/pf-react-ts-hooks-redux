@@ -33,17 +33,34 @@ const Profile = ({ className }) => {
           <br />
           その後アウトソーシングデザイナーへ転職。Webエンジニア/Webデザイナーとして約1年半従事。ランディングページの制作などを担当。
         </p>
-        <h3>TimeLine</h3>
-        <ul>
-          <li>
-            <span>2013/04</span> <span>立命館大学情報理工学部入学</span>
-          </li>
-          <li>
-            <span>2017/03</span> <span>立命館大学情報理工学部卒業</span>
-          </li>
-          <li>2017/04 凸版印刷入社</li>
-          <li>2019/02 凸版印刷退社</li>
-        </ul>
+        <table>
+          <tr>
+            <th>在籍</th>
+            <th>年度</th>
+            <th>概要</th>
+          </tr>
+          <tr>
+            <td>立命館大学</td>
+            <td>2013/4-2017/3</td>
+            <td>
+              情報理工学部情報システム学科にて、ネットワークやセキュリティの知識を主に専攻しました。
+            </td>
+          </tr>
+          <tr>
+            <td>凸版印刷</td>
+            <td>2017/4-2019/2</td>
+            <td>
+              パンフレット、カタログなどの生産を主としたA輪転機、B輪転機の生産管理。営業部門、資材部門、技術部門、工場など多くの部門と情報を共有し、製品が顧客の元へ届くまでの全ステップを管理。
+            </td>
+          </tr>
+          <tr>
+            <td>アウトソーシングデザイナー</td>
+            <td>2019/2-2020/7</td>
+            <td>
+              HTML/CSS/JavaScriptとそのライブラリを用いたリッチなランディングページの制作を担当
+            </td>
+          </tr>
+        </table>
         <h4>Hobby</h4>
         <p>ダーツ・読書・ランニング</p>
       </div>
@@ -58,11 +75,6 @@ const ProfileStyled = styled(Profile)`
     font-size: 30px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
-  }
-  &_backButton {
-    position: fixed;
-    bottom: 10%;
-    right: 10%;
   }
 `;
 
