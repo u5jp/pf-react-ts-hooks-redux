@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useReducer, useCallback } from "react";
 import "./App.css";
 
 import AppContext from "./contexts/AppContext";
@@ -11,6 +11,7 @@ import Skill from "./components/Skill";
 import Profile from "./components/Profile";
 import Header from "./components/Header";
 import BackButton from "./components/BackButton";
+import BackGround from "./components/BackGround";
 
 import initialState from "./initialState";
 
@@ -22,9 +23,9 @@ import { AnimatePresence, motion } from "framer-motion";
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{box-sizing: border-box;}
+  *{color:#000}
   a{
     text-decoration: none;
-    color:#000;
   }
   li{list-style: none;}
 `;
@@ -48,6 +49,7 @@ const App = () => {
 
   return (
     <div className="App">
+      <BackGround />
       <GlobalStyle />
       <AppContext.Provider
         value={{
