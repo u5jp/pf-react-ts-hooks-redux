@@ -7,11 +7,12 @@ import { useInView } from "react-intersection-observer";
 import { AnimatePresence, motion } from "framer-motion";
 
 const Main = ({ className }) => {
-  const value: any = useContext(AppContext);
+  const context: any = useContext(AppContext);
   // const [title, setTitle] = useState("(制作中)about me");
-  const title = "(制作中)about me";
+  const title = "ABOUT ME";
   useEffect(() => {
     document.title = title;
+    window.scrollTo(0, 0);
     return () => {
       document.title = "ReactApp";
     };
@@ -30,14 +31,28 @@ const Main = ({ className }) => {
     >
       <div className={className}>
         <div className={`${className}_aboutMe`}>
-          <View inView={inView1} ref={ref1}>
+          <View inView={inView1} ref={ref1} className={`${className}_title`}>
             <h1>{title}</h1>
             <h2>市橋 優悟</h2>
             <p>Yugo Ichihashi</p>
           </View>
-          <View inView={inView2} ref={ref2}>
+          <View inView={inView2} ref={ref2} className={`${className}_dsc`}>
             <p>
-              グローバルスポーツブランドのWeb制作・運用業務に取り組んでおりました。ディレクターや顧客と連携し、HTML/CSS/JavaScriptとそのライブラリを用いたリッチなランディングページの制作を行うのが主な業務です。フロントエンド・Webデザインの技術への関心が強かったことや生産管理の経験によるコミュニケーションや管理の姿勢が評価され、技術リーダーとしてチームを牽引しておりました。React.jsやVue.jsなどのモダン技術を用いた開発に興味を持ち独学を始めたことをきっかけに転職活動を行なっております。
+              グローバルスポーツブランドのWeb制作・運用業務に取り組んでおりました。
+              <br />
+              ディレクターや顧客と連携し、HTML/CSS/JavaScriptとそのライブラリを用いた
+              <br />
+              リッチなランディングページの制作を行うのが主な業務です。
+              <br />
+              フロントエンド・Webデザインの技術への関心が強かったことや
+              <br />
+              生産管理の経験によるコミュニケーションや管理の姿勢が評価され、
+              <br />
+              技術リーダーとしてチームを牽引しておりました。
+              <br />
+              React.jsやVue.jsなどのモダン技術を用いた開発に興味を持ち
+              <br />
+              独学を始めたことをきっかけに転職活動を行なっております。
             </p>
           </View>
         </div>
@@ -46,7 +61,7 @@ const Main = ({ className }) => {
           inView={inView3}
           ref={ref3}
         >
-          {value.stateProvided.introductions.map((introduction, index) => (
+          {context.stateProvided.introductions.map((introduction, index) => (
             <IntroductionCard key={index} introduction={introduction} />
           ))}
         </View>
@@ -63,27 +78,37 @@ const View = styled.div`
 
 const MainStyled = styled(Main)`
   max-width: 1000px;
-  margin: 0 auto;
+  margin: 50px auto 8%;
   transition: 2s;
   /* opacity: 0; */
   opacity: ${(props) => props.inView && `1`};
-  &_aboutMe {
-    margin-top: 50px;
+  &_title {
     h1 {
       margin-top: 20px;
-      font-size: 30px;
+      font-size: 50px;
       font-weight: bold;
       font-family: "Open Sans", sans-serif;
     }
     h2 {
-      margin-top: 20px;
+      margin-top: 30px;
       font-size: 20px;
     }
+    p {
+      margin-top: 5px;
+      font-size: 20px;
+    }
+  }
+  &_dsc {
+    margin-top: 50px;
+    font-size: 16px;
+    line-height: 2.3;
+    letter-spacing: 0.025em;
   }
   &_introductionCards {
     margin-top: 50px;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 `;
 

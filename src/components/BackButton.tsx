@@ -1,14 +1,13 @@
-import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import AppContext from "../contexts/AppContext";
 
 import styled from "styled-components";
 
 const BackButton = ({ className }) => {
-  const location = useLocation();
-  const [_, rootPath] = location.pathname.split("/");
-  console.log(location);
+  const context: any = useContext(AppContext);
   return (
-    <div className={`${className} ${rootPath !== "" && "visivle"}`}>
+    <div className={`${className} ${context.key !== "" && "visivle"}`}>
       <Link to={"/"}>
         <div>
           <i className="fas fa-arrow-circle-left fa-3x"></i>
@@ -21,13 +20,14 @@ const BackButton = ({ className }) => {
 
 const BackButtonStyled = styled(BackButton)`
   position: fixed;
-  bottom: 10%;
-  right: 10%;
+  bottom: 5%;
+  right: 5%;
   transform: translateX(1000px);
   transition: 2s;
-  transition-delay: 1s;
+  transition-delay: 0.5s;
   &.visivle {
     transform: translateX(0);
+    transition-delay: 2s;
   }
 `;
 

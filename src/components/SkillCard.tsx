@@ -1,22 +1,15 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import styled from "styled-components";
 import { useInView } from "react-intersection-observer";
 
 const SkillCard = ({ skill, className }) => {
   const [ref, inView] = useInView({
-    /* Optional options */
     threshold: 0,
-    // rootMargin: '-50px 0px',
   });
 
   return (
-    <View
-      inView={inView}
-      ref={ref}
-      className={className}
-      barWidth={skill.interest}
-    >
+    <View inView={inView} ref={ref} className={className}>
       <div className={`${className}_logoWrap`}>
         <img src={`${process.env.PUBLIC_URL}/icons/${skill.name}.svg`} />
         {/* <img src={`${window.location.origin}/icons/${skill.name}.svg`} /> */}
@@ -35,7 +28,6 @@ const SkillCard = ({ skill, className }) => {
           inView={inView}
           width={skill.interest}
         ></SkillBar>
-        {/* <h2>{`Header inside viewport ${inView}.`}</h2> */}
       </div>
     </View>
   );

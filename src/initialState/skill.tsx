@@ -6,6 +6,18 @@ const skill = [
     interest: 5,
   },
   {
+    name: "TypeScript",
+    period: "0.5",
+    proficiency: 1,
+    interest: 4,
+  },
+  {
+    name: "JavaScript",
+    period: "0.5",
+    proficiency: 3,
+    interest: 4,
+  },
+  {
     name: "HTML5",
     period: "0.5",
     proficiency: 4,
@@ -21,12 +33,6 @@ const skill = [
     name: "Python",
     period: "0.5",
     proficiency: 2,
-    interest: 4,
-  },
-  {
-    name: "JavaScript",
-    period: "0.5",
-    proficiency: 3,
     interest: 4,
   },
   {

@@ -11,6 +11,7 @@ const Profile = ({ className }) => {
   const [_, rootPath] = location.pathname.split("/");
   useEffect(() => {
     document.title = rootPath;
+    window.scrollTo(0, 0);
     return () => {
       document.title = "ReactApp";
     };
@@ -45,19 +46,13 @@ const Profile = ({ className }) => {
         </ul>
         <h4>Hobby</h4>
         <p>ダーツ・読書・ランニング</p>
-        {/* <Link to={"/"}>
-          <div className={`${className}_backButton`}>
-            <i className="fas fa-arrow-circle-left fa-3x"></i>
-            トップページへ戻る
-          </div>
-        </Link> */}
       </div>
     </motion.div>
   );
 };
 
 const ProfileStyled = styled(Profile)`
-  margin-top: 50px;
+  margin: 50px auto 8%;
   h1 {
     margin-top: 20px;
     font-size: 30px;

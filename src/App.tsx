@@ -50,7 +50,12 @@ const App = () => {
     <div className="App">
       <GlobalStyle />
       <AppContext.Provider
-        value={{ stateProvided: state, dispatchProvided: dispatch }}
+        value={{
+          stateProvided: state,
+          dispatchProvided: dispatch,
+          location: location,
+          key: rootPath,
+        }}
       >
         {/* <HashRouter> */}
         {/* github用にBrowserRouterを代替*/}

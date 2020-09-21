@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Header = ({ className }) => {
-  const value: any = useContext(AppContext);
+  const context: any = useContext(AppContext);
 
   return (
     <nav className={className}>
@@ -13,7 +13,7 @@ const Header = ({ className }) => {
         <li>
           <Link to={""}>top</Link>
         </li>
-        {value.stateProvided.introductions.map((introduction, index) => (
+        {context.stateProvided.introductions.map((introduction, index) => (
           <li key={index}>
             <Link to={`/${introduction.title}`}>{introduction.title}</Link>
           </li>
