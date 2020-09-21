@@ -49,7 +49,6 @@ const App = () => {
 
   return (
     <div className="App">
-      <BackGround />
       <GlobalStyle />
       <AppContext.Provider
         value={{
@@ -63,6 +62,7 @@ const App = () => {
         {/* github用にBrowserRouterを代替*/}
         <Header />
         <Section>
+          <BackGround />
           <AnimatePresence exitBeforeEnter>
             <Switch location={location} key={rootPath}>
               {/* <Switch> */}

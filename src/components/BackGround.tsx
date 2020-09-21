@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 const Particles = require("react-tsparticles");
 
 const BackGround = () => {
@@ -291,4 +291,4 @@ const BackGround = () => {
   );
 };
 
-export default BackGround;
+export default React.memo(BackGround);
