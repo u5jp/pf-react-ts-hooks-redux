@@ -3,8 +3,13 @@ import AppContext from "../contexts/AppContext";
 import { Link } from "react-router-dom";
 
 import styled from "styled-components";
+import media from "styled-media-query";
 
-const Header = ({ className }) => {
+type Props = {
+  className: string;
+};
+
+const Header: React.FC<Props> = ({ className }) => {
   const context: any = useContext(AppContext);
 
   return (
@@ -33,14 +38,16 @@ const HeaderStyled = styled(Header)`
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: flex-end;
-  justify-content: flex-end;
+  justify-content: center;
   z-index: 10000;
-  a {
-    color: #fff;
-  }
+  ${media.greaterThan("medium")`
+    justify-content: flex-end;
+  `}
   > ul {
     display: flex;
-    padding-right: 100px;
+    ${media.greaterThan("medium")`
+      padding-right: 100px;
+    `}
     > li {
       width: 100px;
       padding: 15px;

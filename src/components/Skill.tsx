@@ -4,6 +4,7 @@ import AppContext from "../contexts/AppContext";
 import { Link, useLocation } from "react-router-dom";
 
 import styled from "styled-components";
+import media from "styled-media-query";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -43,7 +44,11 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Skill = ({ className }) => {
+type Props = {
+  className: string;
+};
+
+const Skill: React.FC<Props> = ({ className }) => {
   //matrerialUI
   const classes = useStyles();
   const handleChange = (e: React.ChangeEvent<{ value: unknown }>) => {
@@ -67,12 +72,12 @@ const Skill = ({ className }) => {
         context.isIPhone ? { x: 0, opacity: 1 } : { rotateY: 0, opacity: 1 }
       }
       initial={
-        context.isIPhone ? { x: 500, opacity: 1 } : { rotateY: 90, opacity: 1 }
+        context.isIPhone ? { x: 500, opacity: 0 } : { rotateY: 90, opacity: 0 }
       }
       exit={
         context.isIPhone
-          ? { x: -500, opacity: 1 }
-          : { rotateY: -90, opacity: 1 }
+          ? { x: -500, opacity: 0 }
+          : { rotateY: -90, opacity: 0 }
       }
       transition={{ duration: 0.5 }}
     >
@@ -116,14 +121,22 @@ const Skill = ({ className }) => {
 };
 
 const SkillStyled = styled(Skill)`
-  max-width: 960px;
-  margin: 50px auto 100px;
-  padding-bottom: 0px 50px;
+  max-width: 1000px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+  ${media.greaterThan("medium")`
+    margin: 50px auto 100px;
+    padding: 0 50px;
+  `}
   h1 {
-    margin-top: 20px;
-    font-size: 30px;
+    margin-top: 15px;
+    font-size: 26px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
+    ${media.greaterThan("medium")`
+      margin-top: 20px;
+      font-size: 30px;
+    `}
   }
   &_sort {
     pointer-events: auto;

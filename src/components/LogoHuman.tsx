@@ -1,7 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const LogoHuman = ({ className }) => {
+type Props = {
+  className: string;
+};
+
+const LogoHuman: React.FC<Props> = ({ className }) => {
   return (
     <svg
       className={className}

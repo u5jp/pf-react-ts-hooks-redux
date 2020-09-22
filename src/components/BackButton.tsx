@@ -4,15 +4,17 @@ import AppContext from "../contexts/AppContext";
 
 import styled from "styled-components";
 
-const BackButton = ({ className }) => {
+type Props = {
+  className: string;
+};
+
+const BackButton: React.FC<Props> = ({ className }) => {
   const context: any = useContext(AppContext);
   return (
     <div className={`${className} ${context.key !== "" && "visivle"}`}>
       <Link to={"/"}>
-        <div>
-          <i className="fas fa-arrow-circle-left fa-3x"></i>
-          トップページへ戻る
-        </div>
+        <i className="fas fa-arrow-circle-left fa-3x"></i>
+        <p>トップへ戻る</p>
       </Link>
     </div>
   );
@@ -29,6 +31,10 @@ const BackButtonStyled = styled(BackButton)`
   &.visivle {
     transform: translateX(0);
     transition-delay: 2s;
+  }
+  p {
+    margin-top: 5px;
+    font-size: 14px;
   }
 `;
 

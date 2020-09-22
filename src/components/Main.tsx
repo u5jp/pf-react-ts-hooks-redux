@@ -3,14 +3,20 @@ import IntroductionCard from "./IntroductionCard";
 import AppContext from "../contexts/AppContext";
 
 import styled from "styled-components";
+import media from "styled-media-query";
+
 import { useInView } from "react-intersection-observer";
 import { AnimatePresence, motion } from "framer-motion";
 
-const Main = ({ className }) => {
+type Props = {
+  className: string;
+};
+
+const Main: React.FC<Props> = ({ className }) => {
   const context: any = useContext(AppContext);
   console.log(context);
   // const [title, setTitle] = useState("(制作中)about me");
-  const title = "ABOUT ME";
+  const title = "About Me";
   useEffect(() => {
     document.title = title;
     window.scrollTo(0, 0);
@@ -29,12 +35,12 @@ const Main = ({ className }) => {
         context.isIPhone ? { x: 0, opacity: 1 } : { rotateY: 0, opacity: 1 }
       }
       initial={
-        context.isIPhone ? { x: 500, opacity: 1 } : { rotateY: 90, opacity: 1 }
+        context.isIPhone ? { x: 500, opacity: 0 } : { rotateY: 90, opacity: 0 }
       }
       exit={
         context.isIPhone
-          ? { x: -500, opacity: 1 }
-          : { rotateY: -90, opacity: 1 }
+          ? { x: -500, opacity: 0 }
+          : { rotateY: -90, opacity: 0 }
       }
       transition={{ duration: 0.5 }}
     >
@@ -47,21 +53,37 @@ const Main = ({ className }) => {
           </View>
           <View inView={inView2} ref={ref2} className={`${className}_dsc`}>
             <p>
-              グローバルスポーツブランドのWeb制作・運用業務に取り組んでおりました。
+              グローバルスポーツブランドの
+              <br className="displayNone_PC" />
+              Web制作・運用業務に 取り組んでおりました。
               <br />
-              ディレクターや顧客と連携し、HTML/CSS/JavaScriptとそのライブラリを用いた
+              ディレクターや顧客と連携し、
+              <br className="displayNone_PC" />
+              HTML/CSS/JavaScriptとそのライブラリを
+              <br className="displayNone_PC" />
+              用いた
+              <br className="displayNone_SP" />
+              リッチなランディングページの制作を
+              <br className="displayNone_PC" />
+              行うのが主な業務です。
               <br />
-              リッチなランディングページの制作を行うのが主な業務です。
+              フロントエンド・Webデザインの技術への
+              <br className="displayNone_PC" />
+              関心が強かったことや
               <br />
-              フロントエンド・Webデザインの技術への関心が強かったことや
-              <br />
-              生産管理の経験によるコミュニケーションや管理の姿勢が評価され、
+              生産管理の経験によるコミュニケーションや
+              <br className="displayNone_PC" />
+              管理の姿勢が評価され、
               <br />
               技術リーダーとしてチームを牽引しておりました。
               <br />
-              React.jsやVue.jsなどのモダン技術を用いた開発に興味を持ち
+              React.jsやVue.jsなどのモダン技術を
+              <br className="displayNone_PC" />
+              用いた開発に興味を持ち
               <br />
-              独学を始めたことをきっかけに転職活動を行なっております。
+              独学を始めたことをきっかけに
+              <br className="displayNone_PC" />
+              転職活動を行なっております。
             </p>
           </View>
         </div>
@@ -87,39 +109,62 @@ const View = styled.div`
 
 const MainStyled = styled(Main)`
   max-width: 1000px;
-  margin: 50px auto 100px;
-  padding: 0 50px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
   transition: 2s;
   pointer-events: none;
   opacity: ${(props) => props.inView && `1`};
+  ${media.greaterThan("medium")`
+    margin: 50px auto 100px;
+    padding: 0 50px;
+  `}
   &_title {
     h1 {
-      margin-top: 20px;
-      font-size: 50px;
+      margin-top: 15px;
+      font-size: 40px;
       font-weight: bold;
       font-family: "Open Sans", sans-serif;
+      ${media.greaterThan("medium")`
+        margin-top: 20px;
+        font-size: 50px;
+      `}
     }
     h2 {
-      margin-top: 30px;
-      font-size: 20px;
+      margin-top: 25px;
+      font-size: 18px;
+      ${media.greaterThan("medium")`
+        margin-top: 30px;
+        font-size: 20px;
+      `}
     }
     p {
       margin-top: 5px;
-      font-size: 20px;
+      font-size: 18px;
+      ${media.greaterThan("medium")`
+        margin-top: 5px;
+        font-size: 20px;
+      `}
     }
   }
   &_dsc {
-    margin-top: 50px;
-    font-size: 16px;
+    margin-top: 30px;
+    font-size: 14px;
     line-height: 2.3;
     letter-spacing: 0.025em;
+    ${media.greaterThan("medium")`
+      margin-top: 40px;
+      font-size: 16px;
+    `}
   }
   &_introductionCards {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     pointer-events: auto;
+    ${media.greaterThan("medium")`
+      margin-top: 40px;
+    `}
   }
 `;
 

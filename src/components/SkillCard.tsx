@@ -1,9 +1,16 @@
 import React from "react";
 
 import styled from "styled-components";
+import media from "styled-media-query";
+
 import { useInView } from "react-intersection-observer";
 
-const SkillCard = ({ skill, className }) => {
+type Props = {
+  skill: any;
+  className: string;
+};
+
+const SkillCard: React.FC<Props> = ({ skill, className }) => {
   const [ref, inView] = useInView({
     threshold: 0,
   });
@@ -51,15 +58,22 @@ const SkillCardStyled = styled(SkillCard)`
   margin: 0 auto;
   display: flex;
   &_logoWrap {
-    min-width: 200px;
     > img {
       width: 180px;
       height: 180px;
-      padding: 20px;
+      padding: 10px;
+      ${media.greaterThan("medium")`
+        padding:10px 15px;
+      `}
     }
   }
   &_skillLevel {
-    min-width: 200px;
+    width: 150px;
+    padding: 10px;
+    ${media.greaterThan("medium")`
+      width: 200px;
+      padding:10px 15px;
+    `}
     h3 {
       margin-top: 15px;
       font-weight: bold;

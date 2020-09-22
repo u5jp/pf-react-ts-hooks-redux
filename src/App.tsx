@@ -17,6 +17,7 @@ import initialState from "./initialState";
 
 import reset from "styled-reset";
 import styled, { createGlobalStyle } from "styled-components";
+import media from "styled-media-query";
 
 import { AnimatePresence, motion } from "framer-motion";
 
@@ -28,13 +29,23 @@ const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
   li{list-style: none;}
+  .displayNone_PC{
+    ${media.greaterThan("medium")`
+      display:none;
+    `}
+  }
+  .displayNone_SP{
+    ${media.lessThan("medium")`
+      display:none;
+    `}
+  }
 `;
 
 const Section = styled.section`
   padding-top: 70px;
   position: relative;
   z-index: 10;
-  /* pointer-events: none; */
+  pointer-events: none;
 `;
 
 const getQuery = (search) => {

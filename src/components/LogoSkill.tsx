@@ -1,37 +1,11 @@
 import React from "react";
 import styled from "styled-components";
 
-const Logo = styled.svg`
-  width: 220px;
-  height: 220px;
-  path {
-    fill: url(#grad1);
-  }
-  #stop1 {
-    animation: change-color1 3s ease-in-out infinite alternate;
-  }
-  #stop2 {
-    animation: change-color2 3s ease-in-out infinite alternate;
-  }
-  @keyframes change-color1 {
-    0% {
-      stop-color: fuchsia;
-    }
-    100% {
-      stop-color: red;
-    }
-  }
-  @keyframes change-color2 {
-    0% {
-      stop-color: blue;
-    }
-    100% {
-      stop-color: green;
-    }
-  }
-`;
+type Props = {
+  className: string;
+};
 
-const LogoSkill = ({ className }) => {
+const LogoSkill: React.FC<Props> = ({ className }) => {
   return (
     <svg
       className={className}
