@@ -23,7 +23,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const GlobalStyle = createGlobalStyle`
   ${reset}
   *{box-sizing: border-box;}
-  *{color:#000}
+  *{color:#fff}
   a{
     text-decoration: none;
   }
@@ -32,6 +32,9 @@ const GlobalStyle = createGlobalStyle`
 
 const Section = styled.section`
   padding-top: 70px;
+  position: relative;
+  z-index: 10;
+  pointer-events: none;
 `;
 
 const getQuery = (search) => {
@@ -67,9 +70,9 @@ const App = () => {
       >
         {/* <HashRouter> */}
         {/* github用にBrowserRouterを代替*/}
+        <BackGround />
         <Header />
         <Section>
-          <BackGround />
           <AnimatePresence exitBeforeEnter initial={false}>
             <Switch location={location} key={rootPath}>
               {/* <Switch> */}

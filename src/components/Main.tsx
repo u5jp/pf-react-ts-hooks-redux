@@ -90,7 +90,7 @@ const MainStyled = styled(Main)`
   margin: 50px auto 0;
   padding-bottom: 8%;
   transition: 2s;
-  /* opacity: 0; */
+  pointer-events: none;
   opacity: ${(props) => props.inView && `1`};
   &_title {
     h1 {
@@ -119,6 +119,7 @@ const MainStyled = styled(Main)`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    pointer-events: auto;
   }
 `;
 

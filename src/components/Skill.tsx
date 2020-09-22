@@ -23,6 +23,22 @@ const useStyles = makeStyles((theme: Theme) =>
     formControl: {
       margin: theme.spacing(1),
       minWidth: 120,
+      color: "white",
+    },
+    menuItem: {
+      color: "black",
+    },
+    inputLabel: {
+      color: "white",
+    },
+    select: {
+      color: "white",
+      "&:before": {
+        borderBottom: " 1px solid rgba(255, 255, 255, 0.42)",
+      },
+      "&:hover:not(.Mui-disabled):before": {
+        borderBottom: "2px solid rgba(255, 255, 255, 0.87)",
+      },
     },
   })
 );
@@ -64,15 +80,27 @@ const Skill = ({ className }) => {
         <h1>Skill</h1>
         <div className={`${className}_sort`}>
           <FormControl className={classes.formControl}>
-            <InputLabel id="demo-controlled-open-select-label">Sort</InputLabel>
+            <InputLabel
+              className={classes.inputLabel}
+              id="demo-controlled-open-select-label"
+            >
+              Sort
+            </InputLabel>
             <Select
               labelId="demo-controlled-open-select-label"
               id="demo-controlled-open-select"
               onChange={handleChange}
+              className={classes.select}
             >
-              <MenuItem value="SORT_INTEREST">興味度順</MenuItem>
-              <MenuItem value="SORT_PROFICIENCY">習熟度順</MenuItem>
-              <MenuItem value="SORT_NAME">名前順(A→Z)</MenuItem>
+              <MenuItem className={classes.menuItem} value="SORT_INTEREST">
+                興味度順
+              </MenuItem>
+              <MenuItem className={classes.menuItem} value="SORT_PROFICIENCY">
+                習熟度順
+              </MenuItem>
+              <MenuItem className={classes.menuItem} value="SORT_NAME">
+                名前順(A→Z)
+              </MenuItem>
             </Select>
           </FormControl>
         </div>
@@ -98,7 +126,7 @@ const SkillStyled = styled(Skill)`
     font-family: "Open Sans", sans-serif;
   }
   &_sort {
-    /* text-align: right; */
+    pointer-events: auto;
   }
   &_skillUl {
     display: flex;

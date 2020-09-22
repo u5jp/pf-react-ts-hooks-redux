@@ -11,16 +11,16 @@ const BackGround = () => {
       height={context.isIPhone ? "1000px" : "100%"}
       style={{
         position: "fixed",
-        zIndex: "-1",
+        // zIndex: "-1",
         top: "0",
         left: "0",
       }}
       options={{
         background: {
           color: {
-            value: "#efefef",
+            value: "#000000",
           },
-          image: "",
+          image: "linear-gradient(45deg, #3f3251 2%, #002025 100%)",
           position: "50% 50%",
           repeat: "no-repeat",
           size: "cover",
@@ -36,7 +36,7 @@ const BackGround = () => {
           enable: false,
         },
         detectRetina: true,
-        fpsLimit: 30,
+        fpsLimit: 60,
         infection: {
           cure: false,
           delay: 0,
@@ -47,25 +47,25 @@ const BackGround = () => {
         interactivity: {
           detectsOn: "canvas",
           events: {
-            // onClick: {
-            //   enable: false,
-            //   mode: "push",
-            // },
-            // onDiv: {
-            //   ids: [],
-            //   enable: false,
-            //   mode: [],
-            //   type: "circle",
-            // },
-            // onHover: {
-            //   enable: true,
-            //   mode: "bubble",
-            //   parallax: {
-            //     enable: false,
-            //     force: 2,
-            //     smooth: 10,
-            //   },
-            // },
+            onClick: {
+              enable: true,
+              mode: "push",
+            },
+            onDiv: {
+              ids: [],
+              enable: false,
+              mode: [],
+              type: "circle",
+            },
+            onHover: {
+              enable: false,
+              mode: "",
+              parallax: {
+                enable: true,
+                force: 50,
+                smooth: 10,
+              },
+            },
             resize: true,
           },
           modes: {
@@ -78,9 +78,6 @@ const BackGround = () => {
               distance: 400,
               duration: 2,
               opacity: 0.8,
-              color: {
-                value: "#ff0000",
-              },
               size: 40,
             },
             connect: {
@@ -97,7 +94,7 @@ const BackGround = () => {
               },
             },
             push: {
-              quantity: 4,
+              quantity: 2,
             },
             remove: {
               quantity: 2,
@@ -123,10 +120,10 @@ const BackGround = () => {
             mode: "bounce",
           },
           color: {
-            value: "#1b1e34",
+            value: "#fff",
             animation: {
-              enable: false,
-              speed: 1,
+              enable: true,
+              speed: 20,
               sync: true,
             },
           },
@@ -136,9 +133,9 @@ const BackGround = () => {
               value: "#ffffff",
             },
             consent: false,
-            distance: 200,
-            enable: false,
-            opacity: 1,
+            distance: 80,
+            enable: true,
+            opacity: 0.4,
             shadow: {
               blur: 5,
               color: {
@@ -149,7 +146,7 @@ const BackGround = () => {
             triangles: {
               enable: false,
             },
-            width: 2,
+            width: 1,
             warp: false,
           },
           move: {
@@ -175,7 +172,7 @@ const BackGround = () => {
             },
             outMode: "out",
             random: false,
-            speed: 3,
+            speed: 1,
             straight: false,
             trail: {
               enable: false,
@@ -194,18 +191,18 @@ const BackGround = () => {
               factor: 1000,
             },
             limit: 0,
-            value: 6,
+            value: 30,
           },
           opacity: {
             animation: {
               enable: false,
               minimumValue: 0.1,
-              speed: 1,
+              speed: 3,
               sync: false,
             },
             random: {
-              enable: true,
-              minimumValue: 0.3,
+              enable: false,
+              minimumValue: 1,
             },
             value: 0.5,
           },
@@ -234,10 +231,10 @@ const BackGround = () => {
           shape: {
             options: {
               polygon: {
-                nb_sides: 6,
+                nb_sides: 5,
               },
               star: {
-                nb_sides: 6,
+                nb_sides: 5,
               },
               image: {
                 src: "https://cdn.matteobruni.it/images/particles/github.svg",
@@ -250,33 +247,25 @@ const BackGround = () => {
                 height: 100,
               },
             },
-            type: "polygon",
+            type: "circle",
           },
           size: {
             animation: {
               destroy: "none",
               enable: false,
-              minimumValue: 40,
-              speed: 5,
+              minimumValue: 0.1,
+              speed: 20,
               startValue: "max",
               sync: false,
             },
             random: {
               enable: true,
-              minimumValue: 100,
+              minimumValue: 1,
             },
-            value: 160,
+            value: 4,
           },
           stroke: {
             width: 0,
-            color: {
-              value: "#000",
-              animation: {
-                enable: false,
-                speed: 1,
-                sync: true,
-              },
-            },
           },
           twinkle: {
             lines: {

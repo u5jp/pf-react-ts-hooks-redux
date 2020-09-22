@@ -43,7 +43,7 @@ const Profile = ({ className }) => {
           <br />
           その後アウトソーシングデザイナーへ転職。Webエンジニア/Webデザイナーとして約1年半従事。ランディングページの制作などを担当。
         </p>
-        <table>
+        <table className={`${className}_table`}>
           <tr>
             <th>在籍</th>
             <th>年度</th>
@@ -86,6 +86,8 @@ const ProfileStyled = styled(Profile)`
     font-size: 30px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
+  }
+  &_table {
   }
 `;
 
