@@ -34,7 +34,7 @@ const Section = styled.section`
   padding-top: 70px;
   position: relative;
   z-index: 10;
-  pointer-events: none;
+  /* pointer-events: none; */
 `;
 
 const getQuery = (search) => {

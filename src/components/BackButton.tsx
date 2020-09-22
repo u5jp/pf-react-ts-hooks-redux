@@ -19,6 +19,7 @@ const BackButton = ({ className }) => {
 };
 
 const BackButtonStyled = styled(BackButton)`
+  z-index: 1000;
   position: fixed;
   bottom: 5%;
   right: 5%;

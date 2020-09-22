@@ -87,8 +87,8 @@ const View = styled.div`
 
 const MainStyled = styled(Main)`
   max-width: 1000px;
-  margin: 50px auto 0;
-  padding-bottom: 8%;
+  margin: 50px auto 100px;
+  padding: 0 50px;
   transition: 2s;
   pointer-events: none;
   opacity: ${(props) => props.inView && `1`};

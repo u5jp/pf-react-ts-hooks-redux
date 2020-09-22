@@ -117,8 +117,8 @@ const Skill = ({ className }) => {
 
 const SkillStyled = styled(Skill)`
   max-width: 960px;
-  margin: 50px auto 0;
-  padding-bottom: 8%;
+  margin: 50px auto 100px;
+  padding-bottom: 0px 50px;
   h1 {
     margin-top: 20px;
     font-size: 30px;

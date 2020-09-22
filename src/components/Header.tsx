@@ -11,7 +11,7 @@ const Header = ({ className }) => {
     <nav className={className}>
       <ul>
         <li>
-          <Link to={""}>top</Link>
+          <Link to={""}>Top</Link>
         </li>
         {context.stateProvided.introductions.map((introduction, index) => (
           <li key={index}>
