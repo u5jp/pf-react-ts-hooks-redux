@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cccf88f8e17984376d7f7edf1b09f6bc",
+    "revision": "6645a9d80e30e342ad6a54c9a5c1083f",
     "url": "/pf-react-ts-hooks-redux/index.html"
   },
   {
-    "revision": "a991d4a790f5bd2c4681",
+    "revision": "0c5f9ba582e848d52427",
     "url": "/pf-react-ts-hooks-redux/static/css/2.ac1ab58b.chunk.css"
   },
   {
-    "revision": "27d8d9449ed5efee1f2f",
+    "revision": "d08f468c034ac41ad4f6",
     "url": "/pf-react-ts-hooks-redux/static/css/main.2a83f001.chunk.css"
   },
   {
-    "revision": "a991d4a790f5bd2c4681",
-    "url": "/pf-react-ts-hooks-redux/static/js/2.8ae6806a.chunk.js"
+    "revision": "0c5f9ba582e848d52427",
+    "url": "/pf-react-ts-hooks-redux/static/js/2.81cc9b36.chunk.js"
   },
   {
     "revision": "417d86db752b504ac2c873620d900882",
-    "url": "/pf-react-ts-hooks-redux/static/js/2.8ae6806a.chunk.js.LICENSE.txt"
+    "url": "/pf-react-ts-hooks-redux/static/js/2.81cc9b36.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "27d8d9449ed5efee1f2f",
-    "url": "/pf-react-ts-hooks-redux/static/js/main.5e3fcd36.chunk.js"
+    "revision": "d08f468c034ac41ad4f6",
+    "url": "/pf-react-ts-hooks-redux/static/js/main.302803e1.chunk.js"
   },
   {
     "revision": "1458075c3fbe5213be18",
