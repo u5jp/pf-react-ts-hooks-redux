@@ -86,12 +86,12 @@ const ProfileStyled = styled(Profile)`
   `}
   h1 {
     margin-top: 15px;
-    font-size: 26px;
+    font-size: 30px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
     ${media.greaterThan("medium")`
       margin-top: 20px;
-      font-size: 30px;
+      font-size: 36px;
     `}
   }
   &_dsc {

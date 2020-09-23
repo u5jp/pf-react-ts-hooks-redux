@@ -52,7 +52,7 @@ const TimeLine: React.FC<Props> = ({ className }) => {
           <h4 className="vertical-timeline-element-subtitle">
             Toppan Printing Co., Ltd.
           </h4>
-          <p className={`${className}_timeLine_dsc`}>
+          <p className={`${className}_dsc`}>
             パンフレット、カタログなどの生産管理。営業部門、資材部門、技術部門、工場など多くの部門と情報を共有し、製品が顧客の元へ届くまでの全ステップを管理。
           </p>
         </VerticalTimelineElement>
@@ -70,7 +70,7 @@ const TimeLine: React.FC<Props> = ({ className }) => {
           <h4 className="vertical-timeline-element-subtitle">
             Outsoursing Designer Co.LTD
           </h4>
-          <p className={`${className}_timeLine_dsc`}>
+          <p className={`${className}_dsc`}>
             HTML/CSS/JavaScriptとライブラリを用いたリッチなランディングページの制作を担当。グローバルスポーツブランドのコンテンツ制作やECサイトの運用や自社教材開発などに従事
           </p>
         </VerticalTimelineElement>

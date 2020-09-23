@@ -6,7 +6,7 @@ import media from "styled-media-query";
 const Hobby = ({ className }) => {
   return (
     <div className={className}>
-      <h2>hobbies</h2>
+      <h2>Hobbies</h2>
       <ul>
         <li>
           <img src={`${process.env.PUBLIC_URL}/icons/darts.jpg`} />
@@ -28,11 +28,11 @@ const Hobby = ({ className }) => {
 const HobbyStyled = styled(Hobby)`
   margin-top: 50px;
   h2 {
-    font-size: 24px;
+    font-size: 26px;
     font-weight: bold;
     font-family: "Open Sans", sans-serif;
     ${media.greaterThan("medium")`
-      font-size: 26px;
+      font-size: 28px;
     `}
   }
   ul {
@@ -76,7 +76,7 @@ const HobbyStyled = styled(Hobby)`
         text-shadow: 4px 4px 10px #000;
         margin-left: -50%;
         ${media.greaterThan("medium")`
-          font-size: 25px;
+          font-size: 22px;
         `}
       }
     }
