@@ -55,7 +55,7 @@ const SkillBar = styled.div`
 `;
 
 const SkillCardStyled = styled(SkillCard)`
-  margin: 0 auto;
+  margin: 20px auto 0;
   display: flex;
   &_logoWrap {
     > img {
