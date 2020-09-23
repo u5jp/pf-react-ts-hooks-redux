@@ -27,6 +27,7 @@ const GlobalStyle = createGlobalStyle`
   *{color:#fff}
   a{
     text-decoration: none;
+    display:block;
   }
   li{list-style: none;}
   .displayNone_PC{

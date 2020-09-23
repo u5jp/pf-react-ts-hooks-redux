@@ -62,7 +62,6 @@ const HeaderStyled = styled(Header)`
       a {
         width: 100px;
         padding: 15px;
-        display: block;
       }
     }
   }
