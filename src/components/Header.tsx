@@ -49,8 +49,21 @@ const HeaderStyled = styled(Header)`
       padding-right: 100px;
     `}
     > li {
-      width: 100px;
-      padding: 15px;
+      position: relative;
+      &:not(:last-child):after {
+        content: "";
+        position: absolute;
+        height: 50%;
+        right: 0%;
+        bottom: 50%;
+        transform: translateY(50%);
+        border-right: 1px solid #fff;
+      }
+      a {
+        width: 100px;
+        padding: 15px;
+        display: block;
+      }
     }
   }
 `;
