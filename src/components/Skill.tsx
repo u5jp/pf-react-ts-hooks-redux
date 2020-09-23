@@ -122,10 +122,10 @@ const Skill: React.FC<Props> = ({ className }) => {
 
 const SkillStyled = styled(Skill)`
   max-width: 1000px;
-  margin: 40px auto 80px;
+  margin: 40px auto 100px;
   padding: 0 20px;
   ${media.greaterThan("medium")`
-    margin: 50px auto 100px;
+    margin: 50px auto 120px;
     padding: 0 50px;
   `}
   h1 {
