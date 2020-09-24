@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pf-react-ts-hooks-redux/static/css/main.2a83f001.chunk.css",
-    "main.js": "/pf-react-ts-hooks-redux/static/js/main.64c83c04.chunk.js",
-    "main.js.map": "/pf-react-ts-hooks-redux/static/js/main.64c83c04.chunk.js.map",
+    "main.js": "/pf-react-ts-hooks-redux/static/js/main.c3a0a66b.chunk.js",
+    "main.js.map": "/pf-react-ts-hooks-redux/static/js/main.c3a0a66b.chunk.js.map",
     "runtime-main.js": "/pf-react-ts-hooks-redux/static/js/runtime-main.ef713cf9.js",
     "runtime-main.js.map": "/pf-react-ts-hooks-redux/static/js/runtime-main.ef713cf9.js.map",
     "static/css/2.ac1ab58b.chunk.css": "/pf-react-ts-hooks-redux/static/css/2.ac1ab58b.chunk.css",
     "static/js/2.9bbca20d.chunk.js": "/pf-react-ts-hooks-redux/static/js/2.9bbca20d.chunk.js",
     "static/js/2.9bbca20d.chunk.js.map": "/pf-react-ts-hooks-redux/static/js/2.9bbca20d.chunk.js.map",
     "index.html": "/pf-react-ts-hooks-redux/index.html",
-    "precache-manifest.5b9fd6a43c132d816dc331958eca576b.js": "/pf-react-ts-hooks-redux/precache-manifest.5b9fd6a43c132d816dc331958eca576b.js",
+    "precache-manifest.6f606adc46c9d58289c91f5fc429dc75.js": "/pf-react-ts-hooks-redux/precache-manifest.6f606adc46c9d58289c91f5fc429dc75.js",
     "service-worker.js": "/pf-react-ts-hooks-redux/service-worker.js",
     "static/css/2.ac1ab58b.chunk.css.map": "/pf-react-ts-hooks-redux/static/css/2.ac1ab58b.chunk.css.map",
     "static/css/main.2a83f001.chunk.css.map": "/pf-react-ts-hooks-redux/static/css/main.2a83f001.chunk.css.map",
@@ -22,6 +22,6 @@
     "static/css/2.ac1ab58b.chunk.css",
     "static/js/2.9bbca20d.chunk.js",
     "static/css/main.2a83f001.chunk.css",
-    "static/js/main.64c83c04.chunk.js"
+    "static/js/main.c3a0a66b.chunk.js"
   ]
 }
