@@ -1,0 +1,3 @@
+export const SORT_INTEREST = "SORT_INTEREST";
+export const SORT_PROFICIENCY = "SORT_PROFICIENCY";
+export const SORT_NAME = "SORT_NAME";

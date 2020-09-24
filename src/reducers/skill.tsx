@@ -1,3 +1,5 @@
+import { SORT_INTEREST, SORT_PROFICIENCY, SORT_NAME } from "./actionTypes";
+
 interface SKILL_STATE {
   name: string;
   period: string;
@@ -18,7 +20,7 @@ const i: SKILL_STATE = {
 
 const skill = (state: SKILL_STATE[] = [i], action: ACTION) => {
   switch (action.type) {
-    case "SORT_INTEREST":
+    case SORT_INTEREST:
       state.sort(function (a: any, b: any) {
         a = a.interest;
         b = b.interest;
@@ -30,7 +32,7 @@ const skill = (state: SKILL_STATE[] = [i], action: ACTION) => {
         return 0;
       });
       return [...state];
-    case "SORT_PROFICIENCY":
+    case SORT_PROFICIENCY:
       state.sort(function (a: any, b: any) {
         a = a.proficiency;
         b = b.proficiency;
@@ -42,7 +44,7 @@ const skill = (state: SKILL_STATE[] = [i], action: ACTION) => {
         return 0;
       });
       return [...state];
-    case "SORT_NAME":
+    case SORT_NAME:
       state.sort(function (a: any, b: any) {
         a = a.name.toLowerCase();
         b = b.name.toLowerCase();

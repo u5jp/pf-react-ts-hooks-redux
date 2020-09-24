@@ -3,6 +3,12 @@ import SkillCard from "./SkillCard";
 import AppContext from "../contexts/AppContext";
 import { Link, useLocation } from "react-router-dom";
 
+import {
+  SORT_INTEREST,
+  SORT_PROFICIENCY,
+  SORT_NAME,
+} from "../reducers/actionTypes";
+
 import styled from "styled-components";
 import media from "styled-media-query";
 
@@ -93,13 +99,13 @@ const Skill: React.FC<Props> = ({ className }) => {
               onChange={handleChange}
               className={classes.select}
             >
-              <MenuItem className={classes.menuItem} value="SORT_INTEREST">
+              <MenuItem className={classes.menuItem} value={SORT_INTEREST}>
                 興味度順
               </MenuItem>
-              <MenuItem className={classes.menuItem} value="SORT_PROFICIENCY">
+              <MenuItem className={classes.menuItem} value={SORT_PROFICIENCY}>
                 習熟度順
               </MenuItem>
-              <MenuItem className={classes.menuItem} value="SORT_NAME">
+              <MenuItem className={classes.menuItem} value={SORT_NAME}>
                 名前順(A→Z)
               </MenuItem>
             </Select>
