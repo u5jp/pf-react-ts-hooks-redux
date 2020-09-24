@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "39b36df02e9978b053ce86eec081348a",
+    "revision": "1120915f0502694db23e5b62aed42745",
     "url": "/pf-react-ts-hooks-redux/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pf-react-ts-hooks-redux/static/css/2.ac1ab58b.chunk.css"
   },
   {
-    "revision": "878b3fc33425127a34b8",
+    "revision": "867f32a0f3237221731b",
     "url": "/pf-react-ts-hooks-redux/static/css/main.2a83f001.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pf-react-ts-hooks-redux/static/js/2.9bbca20d.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "878b3fc33425127a34b8",
-    "url": "/pf-react-ts-hooks-redux/static/js/main.0f4e941c.chunk.js"
+    "revision": "867f32a0f3237221731b",
+    "url": "/pf-react-ts-hooks-redux/static/js/main.64c83c04.chunk.js"
   },
   {
     "revision": "1458075c3fbe5213be18",
