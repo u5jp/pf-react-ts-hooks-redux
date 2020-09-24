@@ -24,7 +24,7 @@ const TimeLine: React.FC<Props> = ({ className }) => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "#990000", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid  #990000" }}
-          date="2013 - 2016"
+          date="2013 - 2017"
           iconStyle={{ background: "#990000", color: "#fff" }}
           icon={<University />}
         >
@@ -44,7 +44,7 @@ const TimeLine: React.FC<Props> = ({ className }) => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "#0068b5", color: "#fff" }}
           contentArrowStyle={{ borderRight: "7px solid #0068b5" }}
-          date="2017 - 2018"
+          date="2017 - 2019"
           iconStyle={{ background: "#0068b5", color: "#fff" }}
           icon={<Business />}
         >
