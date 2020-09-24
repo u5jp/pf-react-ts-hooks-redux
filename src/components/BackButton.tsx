@@ -24,11 +24,11 @@ const BackButton: React.FC<Props> = ({ className }) => {
 const BackButtonStyled = styled(BackButton)`
   z-index: 1000;
   position: fixed;
-  bottom: 10%;
+  bottom: 5%;
   right: 5%;
   transform: translateX(1000px);
   transition: 2s;
-  transition-delay: 0.5s;
+  transition-delay: 1s;
   &.visivle {
     transform: translateX(0);
     transition-delay: 2s;
